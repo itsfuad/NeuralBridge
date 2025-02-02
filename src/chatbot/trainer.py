@@ -10,7 +10,11 @@ class Trainer:
 
     def update_model(self, user_input, bot_response):
         # Implement model update logic here
-        pass
+        # Example: Update the chatbot's model with new data
+        # This can include fine-tuning a pre-trained model or updating a custom model
+        # For simplicity, let's assume we are updating a custom model
+        # with new user input and bot response pairs
+        self.model.update(user_input, bot_response)
 
     def self_train(self):
         # Logic for self-training based on stored conversations
