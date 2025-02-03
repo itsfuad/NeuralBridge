@@ -30,11 +30,7 @@ chatbot-app
    ```
    git clone <repository-url>
    ```
-2. Navigate to the project directory:
-   ```
-   cd chatbot-app
-   ```
-3. Install the required dependencies:
+2. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
