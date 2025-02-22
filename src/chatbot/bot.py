@@ -1,7 +1,11 @@
+from chatbot.memory import Memory
+from chatbot.trainer import Trainer
+
+
 class ChatBot:
     def __init__(self):
         self.memory = Memory()
-        self.trainer = Trainer()
+        self.trainer = Trainer(self.memory)
 
     def understand(self, user_input):
         # Process the input to understand the intent and context
