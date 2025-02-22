@@ -1,7 +1,9 @@
-Flask
-nltk
-transformers
-torch
-pandas
-scikit-learn
-langdetect
+Flask>=2.0.0
+nltk>=3.8.1
+transformers>=4.0.0
+torch>=2.0.0
+pandas>=1.5.0
+scikit-learn>=1.0.0
+langdetect>=1.0.9
+sentence-transformers>=2.2.0
+numpy>=1.21.0
