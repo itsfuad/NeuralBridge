@@ -1,4 +1,4 @@
-# AI Model Runner System
+# NeuralBridge
 
 A flexible system for running AI models with enhanced memory and database integration.
 
@@ -24,8 +24,8 @@ A flexible system for running AI models with enhanced memory and database integr
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/ai-model-runner.git
-cd ai-model-runner
+git clone https://github.com/yourusername/neuralbridge.git
+cd neuralbridge
 ```
 
 2. Install the dependencies:

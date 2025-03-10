@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# AI Model Runner System
-# This system allows users to run, store, and manage AI models with an enhanced memory context layer
+# NeuralBridge
+# A flexible system for running AI models with enhanced memory and database integration
 
 import argparse
 import os
