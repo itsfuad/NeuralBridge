@@ -1,5 +1,5 @@
 # Core dependencies
-numpy>=1.20.0
+numpy>=1.24.0
 tqdm>=4.62.0
 
 # Database dependencies
@@ -9,9 +9,11 @@ faiss-cpu>=1.7.0,<1.7.3; platform_system == "Darwin" and platform_machine == "ar
 sentence-transformers>=2.2.0
 
 # AI model integrations
-transformers>=4.25.0
-torch>=1.13.0
+transformers>=4.30.0
+torch>=2.0.0
 openai>=1.0.0
+torchaudio>=2.0.0
+Pillow>=10.0.0
 
 # Optional: for better performance with CUDA
 # torch>=1.13.0+cu117; platform_system != "Darwin" 
