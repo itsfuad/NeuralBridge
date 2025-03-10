@@ -39,6 +39,20 @@ For better performance with FAISS vector database, you might want to install add
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
+## Environment Variables
+
+Some models require authentication tokens. Set these environment variables before running the system:
+
+```bash
+# For OpenAI models
+export OPENAI_API_KEY=your_api_key  # Linux/Mac
+set OPENAI_API_KEY=your_api_key     # Windows
+
+# For Hugging Face models that require authentication
+export HUGGINGFACE_TOKEN=your_token  # Linux/Mac
+set HUGGINGFACE_TOKEN=your_token     # Windows
+```
+
 ## Usage
 
 ### Basic Usage
