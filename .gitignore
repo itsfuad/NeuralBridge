@@ -1,4 +1,11 @@
 __pycache__
 *.pyc
 *.pyo
-.db
+*.db
+*.bin
+*.json
+*.jsonl
+*.jsonl.gz
+*.jsonl.gz.part
+*.jsonl.gz.part.tmp
+*.jsonl.gz.part.tmp.tmp
