@@ -16,7 +16,7 @@ class ModelInterface(ABC):
             "capabilities": []
         }
 
-    def generate(self, messages: List[Dict[str, str]], **kwargs) -> str:
+    def generate(self) -> str:
         """Generate a response from the model."""
         try:
             # Base implementation that can be overridden
@@ -29,7 +29,7 @@ class ModelInterface(ABC):
         """Get information about the model."""
         return self.model_info
 
-    async def generate_stream(self, messages: List[Dict[str, str]], **kwargs) -> AsyncGenerator[str, None]:
+    async def generate_stream(self) -> AsyncGenerator[str, None]:
         """Generate a streaming response from the model."""
         try:
             # Base implementation that can be overridden
@@ -69,7 +69,7 @@ class MemoryInterface(ABC):
         self.stats["total_messages"] += 1
         self.stats["total_size"] += len(json.dumps(message))
 
-    def get_relevant_context(self, query: str, limit: int = 5) -> List[Dict[str, str]]:
+    def get_relevant_context(self, limit: int = 5) -> List[Dict[str, str]]:
         """Get relevant context for a query."""
         # Simple implementation - return most recent messages
         return self.messages[-limit:]
@@ -86,7 +86,7 @@ class MemoryInterface(ABC):
         """Get memory statistics."""
         return self.stats
 
-    def search_memory(self, query: str, limit: int = 5, 
+    def search_memory(self, limit: int = 5, 
                      start_time: Optional[datetime] = None,
                      end_time: Optional[datetime] = None) -> List[Dict[str, Any]]:
         """Search memory with time constraints."""
@@ -194,7 +194,7 @@ class StreamInterface(ABC):
             "max_retries": 3
         }
 
-    async def stream_response(self, messages: List[Dict[str, str]], **kwargs) -> AsyncGenerator[str, None]:
+    async def stream_response(self) -> AsyncGenerator[str, None]:
         """Stream the response from the model."""
         try:
             response = "This is a streamed response"
@@ -267,7 +267,7 @@ class ModelManagerInterface(ABC):
         self.loaded_models = {}
         self.model_status = {}
 
-    def load_model(self, model_name: str, **kwargs) -> ModelInterface:
+    def load_model(self, model_name: str) -> ModelInterface:
         """Load a model by name."""
         if model_name in self.loaded_models:
             return self.loaded_models[model_name]
@@ -298,7 +298,7 @@ class ModelManagerInterface(ABC):
         """Get status of a specific model."""
         return self.model_status.get(model_name, {})
 
-    def register_model(self, model_name: str, model_class: type, **kwargs) -> bool:
+    def register_model(self, model_name: str, model_class: type) -> bool:
         """Register a new model class."""
         try:
             self.loaded_models[model_name] = model_class()
